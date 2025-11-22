@@ -1,12 +1,11 @@
-
+import Home from './assets/pages/Home';
 
 function App() {
-  
   return (
     <>
-      <h1>welcome to proejct</h1>
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
