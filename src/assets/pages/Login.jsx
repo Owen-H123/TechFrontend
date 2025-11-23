@@ -63,12 +63,15 @@ export default function Login() {
           <button   className="btn fw-bold py-2 w-75"style={{backgroundColor: "#104A4D",color: "white",borderRadius: "30px"}}>Ingresar</button>
           </div>
          
-          <p className="text-center mt-3">
-            ¿No tienes una cuenta?{" "}
-            <a href="#" className="text-white fw-bold text-decoration-none">
-              Crear una cuenta
-            </a>
-          </p>
+            <p className="text-center mt-3">
+                    ¿No tienes una cuenta?{" "}
+                    <Link 
+                        to="/registro" 
+                        className="text-white fw-bold text-decoration-none">
+                        Crear una cuenta
+                    </Link>
+            </p>
+
         </div>
       </div>
     </div>
