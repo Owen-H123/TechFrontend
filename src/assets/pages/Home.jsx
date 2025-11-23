@@ -20,9 +20,12 @@ export default function Home() {
                                 Una solución integral para ventas, inventario, pedidos, precios y reportes financieros; 
                                 simple, rápido y seguro.
                             </p>
-                            <a href="login.jsx" className="btn btn-primary btn-lg" style={{backgroundColor:"#319EA4"}}>
-                                <i className="fa-solid fa-rocket me-2" ></i> Iniciar sesión
-                            </a>
+                            <Link 
+                                to="/login" 
+                                            className="btn btn-primary btn-lg" 
+                                            style={{ backgroundColor: "#319EA4" }}>
+                                <i className="fa-solid fa-rocket me-2"></i> Iniciar sesión
+                            </Link>
                         </div>
                         <div className="col-lg-6 col-md-12 d-flex justify-content-center">
                             <div className="card shadow-lg border-0 p-4 text-center">
