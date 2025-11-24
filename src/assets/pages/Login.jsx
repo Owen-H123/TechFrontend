@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../img/logo.png";
 
 
 export default function Login() {
@@ -10,7 +11,7 @@ export default function Login() {
         
         <div className="col-md-6 d-flex align-items-center justify-content-center bg-white p-4">
           <img
-            src=""     
+            src={logo}     
             alt="Tech Solutions"
             className="img-fluid"
             style={{ maxWidth: "300px" }}
