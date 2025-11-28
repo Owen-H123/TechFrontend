@@ -10,6 +10,10 @@ import CrearP from "./assets/components/CrearP.jsx";
 import DetalleP from "./assets/components/DetalleP.jsx";
 import AgregarEditar from "./assets/components/EditarP.jsx";
 import ProcesarPa from "./assets/components/ProcesarPa.jsx";
+import Paypal from "./assets/components/subcomponents/Paypal.jsx";
+import Plin from "./assets/components/subcomponents/Plin.jsx";
+import Yape from "./assets/components/subcomponents/Yape.jsx";
+
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -22,6 +26,9 @@ const router = createBrowserRouter([
   { path: "/detalle-pedido", element: <DetalleP /> },
   { path: "/agregar-editar", element: <AgregarEditar /> },
   { path: "/procesarpa",element:<ProcesarPa/>},
+  { path: "/pagar/paypal", element: <Paypal /> },
+  { path: "/pagar/plin", element: <Plin /> },
+  { path: "/pagar/yape", element: <Yape /> },
 ]);
 
 function App() {
