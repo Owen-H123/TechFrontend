@@ -9,6 +9,7 @@ import Pedidos from "./assets/pages/pedidos.jsx";
 import CrearP from "./assets/components/CrearP.jsx";
 import DetalleP from "./assets/components/DetalleP.jsx";
 import AgregarEditar from "./assets/components/EditarP.jsx";
+import ProcesarPa from "./assets/components/ProcesarPa.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   { path: "/crear-pedido", element: <CrearP /> },
   { path: "/detalle-pedido", element: <DetalleP /> },
   { path: "/agregar-editar", element: <AgregarEditar /> },
+  { path: "/procesarpa",element:<ProcesarPa/>},
 ]);
 
 function App() {
