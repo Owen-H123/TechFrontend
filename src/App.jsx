@@ -9,6 +9,9 @@ import Pedidos from "./assets/pages/pedidos.jsx";
 import CrearP from "./assets/components/CrearP.jsx";
 import DetalleP from "./assets/components/DetalleP.jsx";
 import AgregarEditar from "./assets/components/EditarP.jsx";
+import ConfiguracionE from "./assets/pages/ConfiguracionE.jsx";
+import ConfiguracionP from "./assets/pages/ConfiguracionP.jsx";
+import ConfiguracionG from "./assets/pages/ConfiguracionG.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -20,6 +23,9 @@ const router = createBrowserRouter([
   { path: "/crear-pedido", element: <CrearP /> },
   { path: "/detalle-pedido", element: <DetalleP /> },
   { path: "/agregar-editar", element: <AgregarEditar /> },
+  { path: "/configuracion", element: <ConfiguracionE /> },
+  { path: "/configuracion-pagos", element: <ConfiguracionP /> },
+  { path: "/configuracion-usuarios", element: <ConfiguracionG /> },
 ]);
 
 function App() {
