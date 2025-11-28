@@ -9,6 +9,9 @@ import Pedidos from "./assets/pages/pedidos.jsx";
 import CrearP from "./assets/components/CrearP.jsx";
 import DetalleP from "./assets/components/DetalleP.jsx";
 import AgregarEditar from "./assets/components/EditarP.jsx";
+import ConfiguracionE from "./assets/pages/ConfiguracionE.jsx";
+import ConfiguracionP from "./assets/pages/ConfiguracionP.jsx";
+import ConfiguracionG from "./assets/pages/ConfiguracionG.jsx";
 import ProcesarPa from "./assets/components/ProcesarPa.jsx";
 import Paypal from "./assets/components/subcomponents/Paypal.jsx";
 import Plin from "./assets/components/subcomponents/Plin.jsx";
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
   { path: "/pagar/paypal", element: <Paypal /> },
   { path: "/pagar/plin", element: <Plin /> },
   { path: "/pagar/yape", element: <Yape /> },
+  { path: "/configuracion", element: <ConfiguracionE /> },
+  { path: "/configuracion-pagos", element: <ConfiguracionP /> },
+  { path: "/configuracion-usuarios", element: <ConfiguracionG /> },
+  { path: "/procesarpa", element: <ProcesarPa /> },
 ]);
 
 function App() {
