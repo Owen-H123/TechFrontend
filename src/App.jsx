@@ -7,6 +7,9 @@ import Reportes from "./assets/pages/Reportes.jsx";
 import Catalogo from "./assets/pages/catalago.jsx";
 import Pedidos from "./assets/pages/pedidos.jsx";
 import CrearP from "./assets/components/CrearP.jsx";
+import DetalleP from "./assets/components/DetalleP.jsx";
+import AgregarEditar from "./assets/components/EditarP.jsx";
+
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/login", element: <Login /> },
@@ -15,6 +18,8 @@ const router = createBrowserRouter([
   { path: "/catalogo", element: <Catalogo /> },
   { path: "/pedidos", element: <Pedidos /> },
   { path: "/crear-pedido", element: <CrearP /> },
+  { path: "/detalle-pedido", element: <DetalleP /> },
+  { path: "/agregar-editar", element: <AgregarEditar /> },
 ]);
 
 function App() {

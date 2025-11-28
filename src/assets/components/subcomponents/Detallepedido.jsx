@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../img/logo.png";
+
 
 export default function DetallePedido() {
   return (
@@ -8,7 +8,7 @@ export default function DetallePedido() {
       <nav className="navbar shadow-sm" style={{ backgroundColor: "#1E878D" }}>
         <div className="container-fluid px-4 d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center">
-            <img src={logo} alt="Tech Solutions" style={{ height: "60px" }} className="me-3" />
+           
           </div>
 
           <div className="d-flex gap-2">

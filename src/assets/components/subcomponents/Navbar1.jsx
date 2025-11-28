@@ -1,4 +1,5 @@
 import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../../../img/logo.png";
 
 export default function Navbar1() {
@@ -28,10 +29,10 @@ export default function Navbar1() {
                             </li>
                         </ul>
 
-                        <button className="btn btn-primary" type="button" style={{backgroundColor:"#319EA4",margin:"20px",paddingRight:"40px",paddingLeft:"40px"}}>
+                        <Link to="/login" className="btn btn-primary" style={{backgroundColor:"#319EA4",margin:"20px",paddingRight:"40px",paddingLeft:"40px"}}>
                             <FaUser  style={{marginRight:"10px", marginLeft:"2px"}}/>
                             Ingresar
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </nav>
