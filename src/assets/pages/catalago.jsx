@@ -73,10 +73,10 @@ export default function Catalogo() {
       const actualizado = await updateProducto(productoActualizado.id, {
         producto: productoActualizado.producto,
         categoria: productoActualizado.categoria,
+        descripción: productoActualizado.descripción,
         stock: Number(productoActualizado.stock),
-        precio: Number(productoActualizado.precio),
-        descripcion: productoActualizado.descripcion,
         stockMinimo: Number(productoActualizado.stockMinimo),
+        precio: Number(productoActualizado.precio),
       });
       if (actualizado && actualizado.id) {
         setProductos(productos.map(p => p.id === actualizado.id ? actualizado : p));

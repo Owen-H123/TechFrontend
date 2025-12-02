@@ -4,11 +4,11 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
     const [formData, setFormData] = useState({
         id: "",
         producto: "",
+        descripción: "",
         categoria: "",
         stock: "",
-        precio: "",
-        descripcion: "",
         stockMinimo: "",
+        precio: "",
     });
 
     useEffect(() => {
@@ -16,11 +16,11 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
             setFormData({
                 id: producto.id,
                 producto: producto.producto,
+                descripción: producto.descripción || "",
                 categoria: producto.categoria,
                 stock: producto.stock,
-                precio: producto.precio,
-                descripcion: producto.descripcion || "",
                 stockMinimo: producto.stockMinimo || "",
+                precio: producto.precio,
             });
         }
     }, [producto]);
@@ -33,7 +33,7 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
     };
 
     const handleSubmit = async () => {
-        if (!formData.producto.trim() || !formData.categoria.trim() || !formData.stock || !formData.precio) {
+        if (!formData.producto.trim() || !formData.categoria.trim() || !formData.stock || !formData.precio || !formData.descripción.trim() || !formData.stockMinimo) {
             alert("Por favor completa todos los campos");
             return;
         }
@@ -109,10 +109,11 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
                             <label className="form-label">Descripción</label>
                             <input
                                 type="text"
-                                name="descripcion"
+                                name="descripción"
                                 className="form-control"
-                                value={formData.descripcion}
+                                value={formData.descripción}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
                         <div className="mb-3">
