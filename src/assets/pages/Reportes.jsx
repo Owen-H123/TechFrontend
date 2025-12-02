@@ -1,71 +1,66 @@
 import { Link } from "react-router-dom";
-import logo from "../../img/logo.png";
 
 export default function Reportes() {
     return (
         <div className="min-vh-100" style={{ backgroundColor: "#f0f4f8" }}>
-            {/* Header */}
-            <nav className="navbar shadow-sm" style={{ backgroundColor: "#319EA4" }}>
-                <div className="container-fluid px-4">
-                    <div className="d-flex align-items-center">
-                        <img src={logo} alt="Tech Solutions" style={{ height: "80px" }} className="me-3" />
-                        <span className="navbar-brand text-white mb-0 h5 fw-bold"></span>
-                    </div>
-                    <div className="d-flex gap-2">
-                        <button className="btn btn-light">
-                            <i className="bi bi-house-door-fill me-2"></i>Inicio
-                        </button>
-                        <button className="btn btn-outline-light">
-                            Cerrar Sesión
-                        </button>
-                    </div>
-                </div>
-            </nav>
-
+            
             <div className="container-fluid">
                 <div className="row">
-                    
-                    <div className="col-lg-2 col-md-3 p-4" style={{ backgroundColor: "#7da5a3" }}>
-                        <h5 className="text-white fw-bold mb-4">Filtros</h5>
-                        
-                        
+
+                    {/* SIDEBAR */}
+                    <div
+                        className="col-lg-2 col-md-3 p-4"
+                        style={{ backgroundColor: "#A6CFD2", minHeight: "100vh" }}
+                    >
+                        <h5 className="fw-bold mb-4" style={{ color: "#173E40" }}>
+                            Filtros
+                        </h5>
+
+                        {/* Porcentaje */}
                         <div className="mb-4">
-                            <label className="form-label text-white fw-semibold">Porcentaje</label>
+                            <label className="form-label fw-semibold" style={{ color: "#173E40" }}>
+                                Porcentaje
+                            </label>
                             <div className="input-group input-group-sm">
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    value="$15.000" 
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value="$15.000"
                                     readOnly
                                     style={{ backgroundColor: "#d4e6e5" }}
                                 />
-                                <button className="btn btn-success">
+                                <button className="btn btn-success" style={{ backgroundColor: "#104A4D" }}>
                                     <i className="bi bi-plus"></i>
                                 </button>
                             </div>
                         </div>
 
-                       
+                        {/* Fecha fin */}
                         <div className="mb-4">
-                            <label className="form-label text-white fw-semibold">Fecha fin</label>
+                            <label className="form-label fw-semibold" style={{ color: "#173E40" }}>
+                                Fecha fin
+                            </label>
                             <div className="input-group input-group-sm">
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    value="12-10-2022" 
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value="12-10-2022"
                                     readOnly
                                     style={{ backgroundColor: "#d4e6e5" }}
                                 />
-                                <button className="btn btn-success">
+                                <button className="btn btn-success" style={{ backgroundColor: "#104A4D" }}>
                                     <i className="bi bi-plus"></i>
                                 </button>
                             </div>
                         </div>
 
+                        {/* Tipo */}
                         <div className="mb-4">
-                            <label className="form-label text-white fw-semibold">Tipo</label>
-                            <select 
-                                className="form-select form-select-sm" 
+                            <label className="form-label fw-semibold" style={{ color: "#173E40" }}>
+                                Tipo
+                            </label>
+                            <select
+                                className="form-select form-select-sm"
                                 style={{ backgroundColor: "#d4e6e5" }}
                             >
                                 <option>Ventas</option>
@@ -74,11 +69,13 @@ export default function Reportes() {
                             </select>
                         </div>
 
-                        
+                        {/* Categoría */}
                         <div className="mb-4">
-                            <label className="form-label text-white fw-semibold">Categoría</label>
-                            <select 
-                                className="form-select form-select-sm" 
+                            <label className="form-label fw-semibold" style={{ color: "#173E40" }}>
+                                Categoría
+                            </label>
+                            <select
+                                className="form-select form-select-sm"
                                 style={{ backgroundColor: "#d4e6e5" }}
                             >
                                 <option>Producto 1</option>
@@ -87,11 +84,13 @@ export default function Reportes() {
                             </select>
                         </div>
 
-                        
+                        {/* Productos */}
                         <div className="mb-4">
-                            <label className="form-label text-white fw-semibold">Productos</label>
-                            <select 
-                                className="form-select form-select-sm" 
+                            <label className="form-label fw-semibold" style={{ color: "#173E40" }}>
+                                Productos
+                            </label>
+                            <select
+                                className="form-select form-select-sm"
                                 style={{ backgroundColor: "#d4e6e5" }}
                             >
                                 <option>Mensual</option>
@@ -100,8 +99,8 @@ export default function Reportes() {
                             </select>
                         </div>
 
-                        
-                        <button 
+                        {/* Botón */}
+                        <button
                             className="btn btn-sm w-100 text-white fw-semibold"
                             style={{ backgroundColor: "#104A4D" }}
                         >
@@ -109,100 +108,110 @@ export default function Reportes() {
                         </button>
                     </div>
 
-                    
+                    {/* CONTENIDO PRINCIPAL */}
                     <div className="col-lg-10 col-md-9 p-4">
+
+                        {/* Header interior */}
                         <div className="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                            <h2 className="fw-bold mb-2 mb-md-0" style={{ color: "#104A4D" }}>Reportes</h2>
-                            <div className="btn-group" role="group">
-                                <button className="btn btn-dark">
-                                    Exportar a PDF
-                                </button>
-                                <button className="btn btn-success">
+                            <h2 className="fw-bold mb-2 mb-md-0" style={{ color: "#104A4D" }}>
+                                Reportes
+                            </h2>
+
+                            <div className="btn-group">
+                                <button className="btn btn-dark">Exportar a PDF</button>
+                                <button className="btn btn-success" style={{ backgroundColor: "#104A4D" }}>
                                     Exportar a Excel
                                 </button>
                             </div>
                         </div>
 
-                      
+                        {/* CARD DEL GRÁFICO */}
                         <div className="card shadow-sm border-0">
                             <div className="card-body p-4 p-lg-5">
-                                <div className="position-relative d-flex justify-content-center align-items-end" style={{ height: "400px" }}>
-                                    {/* Eje Y */}
-                                    <div className="position-absolute bg-dark" style={{
-                                        left: "80px",
-                                        bottom: "60px",
-                                        width: "3px",
-                                        height: "350px"
-                                    }}></div>
 
-                                   
-                                    <div className="position-absolute bg-dark" style={{
-                                        left: "80px",
-                                        bottom: "60px",
-                                        width: "600px",
-                                        height: "3px"
-                                    }}></div>
+                                <div
+                                    className="position-relative d-flex justify-content-center align-items-end"
+                                    style={{ height: "400px" }}
+                                >
+                                    {/* EJE Y */}
+                                    <div
+                                        className="position-absolute bg-dark"
+                                        style={{
+                                            left: "80px",
+                                            bottom: "60px",
+                                            width: "3px",
+                                            height: "350px",
+                                        }}
+                                    ></div>
 
-                                    
-                                    <div className="position-absolute" style={{
-                                        left: "76px",
-                                        top: "40px",
-                                        width: "0",
-                                        height: "0",
-                                        borderLeft: "6px solid transparent",
-                                        borderRight: "6px solid transparent",
-                                        borderBottom: "12px solid #333"
-                                    }}></div>
+                                    {/* EJE X */}
+                                    <div
+                                        className="position-absolute bg-dark"
+                                        style={{
+                                            left: "80px",
+                                            bottom: "60px",
+                                            width: "600px",
+                                            height: "3px",
+                                        }}
+                                    ></div>
 
-                                    <div className="position-absolute" style={{
-                                        right: "220px",
-                                        bottom: "54px",
-                                        width: "0",
-                                        height: "0",
-                                        borderTop: "6px solid transparent",
-                                        borderBottom: "6px solid transparent",
-                                        borderLeft: "12px solid #333"
-                                    }}></div>
+                                    {/* Flecha eje Y */}
+                                    <div
+                                        className="position-absolute"
+                                        style={{
+                                            left: "76px",
+                                            top: "40px",
+                                            borderLeft: "6px solid transparent",
+                                            borderRight: "6px solid transparent",
+                                            borderBottom: "12px solid #333",
+                                        }}
+                                    ></div>
 
-                                    
-                                    <div className="d-flex align-items-end justify-content-center gap-2 gap-md-3" style={{ marginLeft: "100px", marginBottom: "60px" }}>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "200px", 
-                                            backgroundColor: "#ff6b6b"
-                                        }}></div>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "180px", 
-                                            backgroundColor: "#a8e063"
-                                        }}></div>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "240px", 
-                                            backgroundColor: "#7c6bff"
-                                        }}></div>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "160px", 
-                                            backgroundColor: "#dc6bff"
-                                        }}></div>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "170px", 
-                                            backgroundColor: "#6bddff"
-                                        }}></div>
-                                        <div className="rounded-top" style={{ 
-                                            width: "60px", 
-                                            height: "220px", 
-                                            backgroundColor: "#ffe66b"
-                                        }}></div>
+                                    {/* Flecha eje X */}
+                                    <div
+                                        className="position-absolute"
+                                        style={{
+                                            right: "220px",
+                                            bottom: "54px",
+                                            borderTop: "6px solid transparent",
+                                            borderBottom: "6px solid transparent",
+                                            borderLeft: "12px solid #333",
+                                        }}
+                                    ></div>
+
+                                    {/* BARRAS */}
+                                    <div
+                                        className="d-flex align-items-end justify-content-center gap-2 gap-md-3"
+                                        style={{ marginLeft: "100px", marginBottom: "60px" }}
+                                    >
+                                        {[
+                                            { h: 200, c: "#ff6b6b" },
+                                            { h: 180, c: "#a8e063" },
+                                            { h: 240, c: "#7c6bff" },
+                                            { h: 160, c: "#dc6bff" },
+                                            { h: 170, c: "#6bddff" },
+                                            { h: 220, c: "#ffe66b" },
+                                        ].map((bar, i) => (
+                                            <div
+                                                key={i}
+                                                className="rounded-top"
+                                                style={{
+                                                    width: "60px",
+                                                    height: bar.h + "px",
+                                                    backgroundColor: bar.c,
+                                                }}
+                                            ></div>
+                                        ))}
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

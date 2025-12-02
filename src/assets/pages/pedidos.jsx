@@ -6,28 +6,7 @@ export default function Pedidos() {
         <div className="min-vh-100" style={{ backgroundColor: "#f0f4f8" }}>
 
             
-            <nav className="navbar shadow-sm" style={{ backgroundColor: "#066368" }}>
-                <div className="container-fluid px-4">
-                    <div className="d-flex align-items-center">
-                        <img
-                            src={logo}
-                            alt="Tech Solutions"
-                            style={{ height: "80px" }}
-                            className="me-3"
-                        />
-                    </div>
-
-                    <div className="d-flex gap-2">
-                        <Link to="/" className="btn btn-light">
-                            <i className="bi bi-house-door-fill me-2"></i>Inicio
-                        </Link>
-
-                        <button className="btn" style={{backgroundColor:"#104A4D",color:"white"}}>
-                            Cerrar Sesión
-                        </button>
-                    </div>
-                </div>
-            </nav>
+          
 
           
             <nav className="navbar shadow-sm pt-4 pb-4" style={{ backgroundColor: "#72BEC2" }}>

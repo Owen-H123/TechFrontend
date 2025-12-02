@@ -4,22 +4,7 @@ import logo from "../../img/logo.png";
 export default function ConfiguracionP() {
     return (
         <div className="min-vh-100" style={{ backgroundColor: "#f0f4f8" }}>
-            {/* Header */}
-            <nav className="navbar shadow-sm" style={{ backgroundColor: "#173E40" }}>
-                <div className="container-fluid px-4">
-                    <div className="d-flex align-items-center">
-                        <img src={logo} alt="Tech Solutions" style={{ height: "50px" }} className="me-3" />
-                    </div>
-                    <div className="d-flex gap-2">
-                        <button className="btn btn-light">
-                            <i className="bi bi-house-door-fill me-2"></i>Inicio
-                        </button>
-                        <button className="btn btn-outline-light">
-                            Cerrar Sesión
-                        </button>
-                    </div>
-                </div>
-            </nav>
+          
 
             {/* Barra de Configuración */}
             <nav className="navbar shadow-sm" style={{ backgroundColor: "#72BEC2" }}>
