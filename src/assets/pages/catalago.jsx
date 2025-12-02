@@ -75,6 +75,8 @@ export default function Catalogo() {
         categoria: productoActualizado.categoria,
         stock: Number(productoActualizado.stock),
         precio: Number(productoActualizado.precio),
+        descripcion: productoActualizado.descripcion,
+        stockMinimo: Number(productoActualizado.stockMinimo),
       });
       if (actualizado && actualizado.id) {
         setProductos(productos.map(p => p.id === actualizado.id ? actualizado : p));

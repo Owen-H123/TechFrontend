@@ -7,6 +7,8 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
         categoria: "",
         stock: "",
         precio: "",
+        descripcion: "",
+        stockMinimo: "",
     });
 
     useEffect(() => {
@@ -17,6 +19,8 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
                 categoria: producto.categoria,
                 stock: producto.stock,
                 precio: producto.precio,
+                descripcion: producto.descripcion || "",
+                stockMinimo: producto.stockMinimo || "",
             });
         }
     }, [producto]);
@@ -98,6 +102,26 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
                                 name="precio"
                                 className="form-control"
                                 value={formData.precio}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Descripción</label>
+                            <input
+                                type="text"
+                                name="descripcion"
+                                className="form-control"
+                                value={formData.descripcion}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Stock Mínimo</label>
+                            <input
+                                type="number"
+                                name="stockMinimo"
+                                className="form-control"
+                                value={formData.stockMinimo}
                                 onChange={handleChange}
                             />
                         </div>
