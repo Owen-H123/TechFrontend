@@ -34,7 +34,11 @@ export const updateProducto = async (id, producto) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(producto),
   });
-  if (!response.ok) throw new Error("Error al actualizar producto");
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error("Error del servidor:", errorText);
+    throw new Error(`Error al actualizar producto: ${response.status} ${response.statusText}`);
+  }
   return await response.json(); // devuelve producto actualizado
 };
 // prueba git

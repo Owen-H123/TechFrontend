@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function ModalEditarProducto({ producto, onClose, onSave }) {
     const [formData, setFormData] = useState({
+        id: "",
         producto: "",
         categoria: "",
         stock: "",
@@ -11,6 +12,7 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
     useEffect(() => {
         if (producto) {
             setFormData({
+                id: producto.id,
                 producto: producto.producto,
                 categoria: producto.categoria,
                 stock: producto.stock,
@@ -26,12 +28,21 @@ export default function ModalEditarProducto({ producto, onClose, onSave }) {
         });
     };
 
-    const handleSubmit = () => {
-        onSave(formData);
+    const handleSubmit = async () => {
+        if (!formData.producto.trim() || !formData.categoria.trim() || !formData.stock || !formData.precio) {
+            alert("Por favor completa todos los campos");
+            return;
+        }
+        try {
+            await onSave(formData);
+        } catch (error) {
+            console.error("Error al guardar:", error);
+            alert("Error al guardar los cambios");
+        }
     };
 
     return (
-        <div className="modal show d-block" tabIndex="-1">
+        <div className="modal show d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
             <div className="modal-dialog">
                 <div className="modal-content">
 

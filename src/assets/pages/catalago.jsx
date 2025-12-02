@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProductos, addProducto, deleteProducto, updateProducto } from "../../services/productService";
+import ModalEditarProducto from "../components/subcomponents/EditarProductosForm";
 
 export default function Catalogo() {
   const [productos, setProductos] = useState([]);
@@ -12,6 +13,8 @@ export default function Catalogo() {
     marca: "Seleccionar",
   });
 
+  const [productoEditar, setProductoEditar] = useState(null);
+  const [mostrarModalEditar, setMostrarModalEditar] = useState(false);
   // Cargar productos
   useEffect(() => {
     cargarProductos();
@@ -60,34 +63,30 @@ export default function Catalogo() {
 
   // Editar producto (nombre, categoría, stock y precio)
   const handleEditar = async (id) => {
-    const productoAEditar = productos.find(p => p.id === id);
-    if (!productoAEditar) return;
+    const producto = productos.find(p => p.id === id);
+    setProductoEditar(producto);
+    setMostrarModalEditar(true);
+  };
 
-    const nuevoNombre = prompt("Editar nombre del producto:", productoAEditar.producto);
-    if (!nuevoNombre) return;
-
-    const nuevaCategoria = prompt("Editar categoría:", productoAEditar.categoria);
-    if (!nuevaCategoria) return;
-
-    const nuevoStock = prompt("Editar stock:", productoAEditar.stock);
-    if (nuevoStock === null || isNaN(nuevoStock)) return;
-
-    const nuevoPrecio = prompt("Editar precio:", productoAEditar.precio);
-    if (nuevoPrecio === null || isNaN(nuevoPrecio)) return;
-
-    const productoActualizado = {
-      ...productoAEditar,
-      producto: nuevoNombre,
-      categoria: nuevaCategoria,
-      stock: parseInt(nuevoStock),
-      precio: parseFloat(nuevoPrecio),
-    };
-
+  const guardarCambios = async (productoActualizado) => { 
     try {
-      const actualizado = await updateProducto(id, productoActualizado);
-      setProductos(productos.map(p => p.id === id ? actualizado : p));
+      const actualizado = await updateProducto(productoActualizado.id, {
+        producto: productoActualizado.producto,
+        categoria: productoActualizado.categoria,
+        stock: Number(productoActualizado.stock),
+        precio: Number(productoActualizado.precio),
+      });
+      if (actualizado && actualizado.id) {
+        setProductos(productos.map(p => p.id === actualizado.id ? actualizado : p));
+        setMostrarModalEditar(false);
+        setProductoEditar(null);
+        alert("Producto actualizado correctamente");
+      } else {
+        throw new Error("Respuesta inválida del servidor");
+      }
     } catch (error) {
       console.error("Error actualizando producto", error);
+      alert("Error al guardar los cambios: " + error.message);
     }
   };
 
@@ -228,6 +227,13 @@ export default function Catalogo() {
           </div>
         </div>
       </div>
+      {mostrarModalEditar && productoEditar && (
+        <ModalEditarProducto
+          producto={productoEditar}
+          onClose={() => setMostrarModalEditar(false)}
+          onSave={guardarCambios}
+        />
+      )}
     </div>
   );
 }
