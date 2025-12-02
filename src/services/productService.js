@@ -37,3 +37,4 @@ export const updateProducto = async (id, producto) => {
   if (!response.ok) throw new Error("Error al actualizar producto");
   return await response.json(); // devuelve producto actualizado
 };
+// prueba git
